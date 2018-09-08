@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Intro from '../Intro'
+import Main from '../main/index'
 import './App.css';
 import 'whatwg-fetch';
-import Series from '../containers/series';
 
 
 
@@ -20,12 +19,13 @@ class App extends Component {
           
           <h1 className="App-title">Tv Series App</h1>
         </header>
-        <Intro message="Here you can fil all most sereis" />
+       
         
-        <Series />
+        <Main />
       </div>
     );
   }
 }
 
 export default App;
+

@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
-import SeriesList from '../seriesList'
+import SeriesList from '../seriesList';
+import Intro from '../../Intro'
+// import Loader from '../loader';
 
 
 class Series extends Component {
@@ -40,7 +42,7 @@ class Series extends Component {
 		
 		return(
 			<div>
-			 
+			  <Intro message="Here you can fil all most sereis" />
 			 <div>
 			 	<input value={seriesName}  
 				 	type="text" 
@@ -48,18 +50,18 @@ class Series extends Component {
 				/>
 			 </div>
 			 {
-			 	series.length === 0 && seriesName.trim() === ''
+			 	!isFetchingProperity && series.length === 0 && seriesName.trim() === ''
 			 	&&
 			 	<p>Please entert the seriesName in the input</p>
 			 }
 			 {
-			 	series.length === 0 && seriesName.trim() !== ''
+			 	!isFetchingProperity && series.length === 0 && seriesName.trim() !== ''
 			 	&&
 			 	<p>No TV series has this name</p>
 			 }
 
 			 {
-			 	isFetchingProperity && <p>Loading.....</p>
+			 	isFetchingProperity && <p>loading...</p>
 			 }
 
 			 {
